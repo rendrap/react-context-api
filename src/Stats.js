@@ -26,7 +26,7 @@ const Stats = () => {
         );
       }}
     </Consumer>
-    );
+  );
 };
 
  export default Stats;
