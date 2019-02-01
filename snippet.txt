@@ -1,0 +1,23 @@
+render() {
+    const highScore = this.getHighScore();
+
+    return (
+      <Provider value={{
+        players: this.state.players,
+        actions: {
+          changeScore: this.handleScoreChange,
+          removePlayer: this.handleRemovePlayer
+        }
+      }}>
+        <div className='scoreboard'>
+          <Header />
+          <PlayerList
+            removePlayer={this.handleRemovePlayer}
+            highScore={highScore}
+          />
+          <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        </div>
+      </Provider>
+    );
+  }
+};
